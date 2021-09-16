@@ -1,6 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
-group='com.gitee.zhao_yuezhou'
+group='com.github.zhao331863874'
 
 ext {
     //当前应用横竖屏方向 portrait=竖屏，landscape=横屏
