@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.duole.launcher">
+    <application>
+
+<!--        &lt;!&ndash; 多乐启动器配置数据 &ndash;&gt;-->
+<!--        <meta-data tools:replace="value" android:name="app_activity_name" android:value="com.duole.paohuzihd.AppActivity" />-->
+<!--        &lt;!&ndash; app 版号信息文件 &ndash;&gt;-->
+<!--        <meta-data tools:replace="value" android:name="version_info_file" android:value="launcher/version_info.png" />-->
+
+<!--        &lt;!&ndash; 如需要定制隐私对话框内容，需要将下面的配置拷贝到主 manifest 并对内容进行设置&ndash;&gt;-->
+<!--        <meta-data tools:replace="value" android:name="privacy_agreement_url" android:value="https://www.duole.com/contract.html" />-->
+<!--        <meta-data tools:replace="value" android:name="privacy_guide_url" android:value="https://www.duole.com/privacy-policy.html" />-->
+<!--        <meta-data tools:replace="value" android:name="privacy_message" android:value="感谢您使用本游戏，我们在提供游戏服务时可能会对您的信息进行收集、使用、共享和保护。为了您充分理解我们对您信息的使用和保护，请在使用前认真阅读以下内容：" />-->
+<!--        <meta-data tools:replace="value" android:name="privacy_update_message" android:value="多乐游戏保障用户合法权益和重视用户隐私，并严格遵守相关法律法规的要求。我们更新了用户协议和隐私保护指引，请您仔细阅读并确认同意《多乐游戏用户协议》和《隐私保护指引》后再继续游戏。" />-->
+<!--        <meta-data tools:replace="value" android:name="permission" android:value="【电话】,【存储】" />-->
+<!--        <meta-data tools:replace="value" android:name="permission_message" android:value="我们将在您同意上述内容后申请 %1$s权限，用于了解您的本机识别码，保障账号安全，以及提供保存和分享图片、反馈日志等功能。" />-->
+
+        <!-- 多乐启动器配置数据 -->
+        <meta-data android:name="app_activity_name" android:value="com.duole.AppActivity" />
+        <!-- app 版号信息文件 -->
+        <meta-data android:name="version_info_file" android:value="version_info.png" />
+        <!-- 加载游戏期间遮罩图片 -->
+        <meta-data android:name="shade_image_file" android:value="shade_image.png" />
+        <!-- 是否播放视频配置 -->
+        <meta-data android:name="load_video" android:value="${LOAD_VIDEO}" />
+
+        <!-- 配置数据 -->
+        <meta-data android:name="privacy_agreement_url" android:value="https://www.duole.com/contract.html" />
+        <meta-data android:name="privacy_guide_url" android:value="https://www.duole.com/privacy-policy.html" />
+        <meta-data android:name="privacy_message" android:value="感谢您使用本游戏，我们在提供游戏服务时可能会对您的信息进行收集、使用、共享和保护。为了您充分理解我们对您信息的使用和保护，请在使用前认真阅读以下内容：" />
+        <meta-data android:name="privacy_update_message" android:value="多乐游戏保障用户合法权益和重视用户隐私，并严格遵守相关法律法规的要求。我们更新了用户协议和隐私保护指引，请您仔细阅读并确认同意《多乐游戏用户协议》和《隐私保护指引》后再继续游戏。" />
+        <meta-data android:name="permission" android:value="【电话】,【存储】" />
+        <meta-data android:name="permission_message" android:value="我们将在您同意上述内容后申请 %1$s权限，用于了解您的本机识别码，保障账号安全，以及提供保存和分享图片、反馈日志等功能。" />
+
+        <activity android:name="com.duole.launcher.splash.SplashActivity"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTop"
+            android:screenOrientation="${SCREEN_ORIENTATION}">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+        <!-- duole 隐私协议组件相关定义 -->
+        <activity android:name="com.duole.launcher.privacy.ui.PrivacyDialog"
+            android:theme="@style/Theme.AppCompat.Dialog"
+            android:launchMode="singleTop"
+            android:screenOrientation="${SCREEN_ORIENTATION}" />
+
+        <!--此处需要配置屏幕的方向  portrait竖向 landscape 横向-->
+        <activity android:name="com.duole.launcher.privacy.ui.PrivacyContent"
+            android:launchMode="singleTop"
+            android:screenOrientation="${SCREEN_ORIENTATION}" />
+    </application>
+</manifest>

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:orientation="vertical"
+android:layout_width="wrap_content"
+android:minWidth="@dimen/qb_px_333"
+android:layout_height="wrap_content"
+android:background="@drawable/duole_privacy_dialog_bg"
+android:id="@+id/privacy_linearlayout"
+    >
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:background="@drawable/duole_head_bg"
+    android:layout_height="@dimen/qb_px_42">
+    <TextView
+        android:id="@+id/duole_sdk_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:visibility="visible"
+        android:textColor="#464646"
+        android:textSize="@dimen/qb_px_16" />
+    <ImageView
+        android:id="@+id/duole_sdk_close"
+        android:layout_width="@dimen/qb_px_30"
+        android:layout_height="@dimen/qb_px_30"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/duole_sdk_close"
+        android:layout_centerVertical="true"
+        android:visibility="gone"
+        />
+
+</RelativeLayout>
+<LinearLayout
+    android:id="@+id/root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginLeft="@dimen/qb_px_18"
+    android:layout_marginRight="@dimen/qb_px_18"
+    >
+    <!--android:gravity="center" 这个属性，每行字数一致的，居中比较好看，不一致的，居左比较好看-->
+    <TextView
+        android:id="@+id/message"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="left"
+        android:textSize="@dimen/qb_px_14"
+        android:paddingTop="@dimen/qb_px_15"
+        android:textColor="#464646"
+        />
+    <LinearLayout
+        android:id="@+id/guide_layout"
+        android:layout_width="wrap_content"
+        android:minWidth="@dimen/qb_px_250"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/qb_px_10"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        >
+        <TextView
+            android:id="@+id/serviceagreement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:singleLine="true"
+            android:autoLink="all"
+            android:text="《多乐游戏用户服务协议》"
+            android:textColor="#45c280"
+            android:textSize="@dimen/qb_px_14"
+            />
+        <TextView
+            android:id="@+id/userguide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/qb_px_10"
+            android:gravity="center"
+            android:singleLine="true"
+            android:autoLink=""
+            android:text="《多乐游戏隐私保护指引》"
+            android:textColor="#45c280"
+            android:textSize="@dimen/qb_px_14"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/guide_layout_horizontal"
+        android:layout_width="wrap_content"
+        android:minWidth="@dimen/qb_px_250"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/qb_px_15"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        >
+        <TextView
+            android:id="@+id/serviceagreement_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:singleLine="true"
+            android:autoLink="all"
+            android:text="《多乐游戏用户服务协议》"
+            android:textColor="#45c280"
+            android:textSize="@dimen/qb_px_14"
+            android:layout_marginRight="@dimen/qb_px_5"
+            />
+        <TextView
+            android:id="@+id/userguide_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:singleLine="true"
+            android:autoLink="all"
+            android:text="《多乐游戏隐私保护指引》"
+            android:textColor="#45c280"
+            android:textSize="@dimen/qb_px_14"
+            android:layout_marginLeft="@dimen/qb_px_5"
+
+
+            />
+    </LinearLayout>
+    <LinearLayout
+
+        android:layout_width="wrap_content"
+        android:minWidth="@dimen/qb_px_250"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/qb_px_15"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        >
+        <TextView
+            android:id="@+id/message_detailed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:textSize="@dimen/qb_px_12"
+            android:textColor="#464646"
+            android:text="我们将在您同意后申请【电话】和【短信】权限，用于关联设备信息，记录游戏数据，以保证您的账号安全。其他权限将在您使用相关功能时申请。"
+            />
+
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/qb_px_5"
+        >
+        <TextView
+            android:id="@+id/negtive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textColor="#45c280"
+            android:textSize="@dimen/qb_px_14"
+            android:layout_marginLeft="@dimen/qb_px_30"
+            android:text="拒绝"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/qb_px_17"
+            android:layout_marginTop="@dimen/qb_px_16"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/positive"
+                android:layout_width="@dimen/qb_px_116"
+                android:layout_height="@dimen/qb_px_34"
+                android:stateListAnimator="@null"
+                android:background="@drawable/privacy_button_selector"
+                android:gravity="center"
+                android:layout_gravity="center_vertical"
+                android:singleLine="true"
+                android:text="同意"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/qb_px_14"
+
+                />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>
+
+
+</LinearLayout>
