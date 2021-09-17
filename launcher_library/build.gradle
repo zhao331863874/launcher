@@ -6,7 +6,7 @@ ext {
     //当前应用横竖屏方向 portrait=竖屏，landscape=横屏
     SCREEN_ORIENTATION="landscape"
     //是否加载视频 true=加载，false=不加载
-    LOAD_VIDEO="true"
+    LOAD_VIDEO="false"
 }
 
 android {
