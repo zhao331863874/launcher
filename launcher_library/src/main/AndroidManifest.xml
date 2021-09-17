@@ -23,7 +23,7 @@
         <!-- 加载游戏期间遮罩图片 -->
         <meta-data android:name="shade_image_file" android:value="shade_image.png" />
         <!-- 是否播放视频配置 -->
-        <meta-data android:name="load_video" android:value="${LOAD_VIDEO}" />
+        <meta-data android:name="load_video" android:value="true" />
 
         <!-- 配置数据 -->
         <meta-data android:name="privacy_agreement_url" android:value="https://www.duole.com/contract.html" />
@@ -37,7 +37,7 @@
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:launchMode="singleTop"
-            android:screenOrientation="${SCREEN_ORIENTATION}">
+            android:screenOrientation="landscape">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -50,11 +50,11 @@
         <activity android:name="com.duole.launcher.privacy.ui.PrivacyDialog"
             android:theme="@style/Theme.AppCompat.Dialog"
             android:launchMode="singleTop"
-            android:screenOrientation="${SCREEN_ORIENTATION}" />
+            android:screenOrientation="landscape" />
 
         <!--此处需要配置屏幕的方向  portrait竖向 landscape 横向-->
         <activity android:name="com.duole.launcher.privacy.ui.PrivacyContent"
             android:launchMode="singleTop"
-            android:screenOrientation="${SCREEN_ORIENTATION}" />
+            android:screenOrientation="landscape" />
     </application>
 </manifest>

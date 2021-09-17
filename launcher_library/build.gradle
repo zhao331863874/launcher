@@ -2,12 +2,12 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 group='com.github.zhao331863874'
 
-ext {
-    //当前应用横竖屏方向 portrait=竖屏，landscape=横屏
-    SCREEN_ORIENTATION="landscape"
-    //是否加载视频 true=加载，false=不加载
-    LOAD_VIDEO="true"
-}
+//ext {
+//    //当前应用横竖屏方向 portrait=竖屏，landscape=横屏
+//    SCREEN_ORIENTATION="landscape"
+//    //是否加载视频 true=加载，false=不加载
+//    LOAD_VIDEO="true"
+//}
 
 android {
 //    compileSdkVersion 29
@@ -26,9 +26,9 @@ android {
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
-        //根据SCREEN_ORIENTATION当前定义配置AndroidManifest方向值
-        //根据LOAD_VIDEO当前定义配置AndroidManifest 对应load_video值
-        manifestPlaceholders = [SCREEN_ORIENTATION: SCREEN_ORIENTATION, LOAD_VIDEO: LOAD_VIDEO]
+//        //根据SCREEN_ORIENTATION当前定义配置AndroidManifest方向值
+//        //根据LOAD_VIDEO当前定义配置AndroidManifest 对应load_video值
+//        manifestPlaceholders = [SCREEN_ORIENTATION: SCREEN_ORIENTATION, LOAD_VIDEO: LOAD_VIDEO]
     }
 
     buildTypes {
@@ -45,11 +45,10 @@ android {
 
 // 编译完成之后，copy到指定目录，同时重命名
 android.libraryVariants.all { variant ->
-    configureResources()
     if (variant.buildType.name == 'release') {
         // 修改aar名称
         variant.outputs.all { output ->
-            outputFileName = "${project.name}_v${android.defaultConfig.versionName}_${android.defaultConfig.versionCode}_${SCREEN_ORIENTATION}.aar"
+            outputFileName = "${project.name}_v${android.defaultConfig.versionName}_${android.defaultConfig.versionCode}.aar"
         }
         // 复制aar到指定目录
         variant.getAssembleProvider().configure() {
@@ -65,33 +64,6 @@ android.libraryVariants.all { variant ->
                 }
             }
         }
-    }
-}
-
-def configureResources() {
-    def sourceDir = "${buildDir}/../"   // 资源存放目录，这里是app下
-    print "${buildDir} \n"  // 打印路径
-
-    delete(fileTree(dir: project.file("src/main/res/raw/")))
-    if (LOAD_VIDEO == 'true') {
-        copy { // 将from目录下的资源拷贝到into 下目录去
-            if (SCREEN_ORIENTATION == 'landscape') {
-                from "${sourceDir}/copy_resources/raw/duole_splash_1920_864.mp4"
-            } else {
-                from "${sourceDir}/copy_resources/raw/duole_splash_720_1600.mp4"
-            }
-            into "${sourceDir}/src/main/res/raw"
-        }
-    }
-
-    delete(fileTree(dir: project.file("src/main/res/drawable/duole_version_info.png")))
-    copy { // 将from目录下的资源拷贝到into 下目录去
-        if (SCREEN_ORIENTATION == 'landscape') {
-            from "${sourceDir}/copy_resources/drawable/landscape/duole_version_info.png"
-        } else {
-            from "${sourceDir}/copy_resources/drawable/portrait/duole_version_info.png"
-        }
-        into "${sourceDir}/src/main/res/drawable"
     }
 }
 
